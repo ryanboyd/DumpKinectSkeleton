@@ -8,3 +8,56 @@ The original project can be found here:
 https://github.com/sebtoun/DumpKinectSkeleton
 
 I have added a small bit of code that calculates some additional joint info at the time of output, along with hand states.
+
+## Joint output interpretation
+
+JOINT STATE
+
+|State|Value|Description|
+|:---|:---:|:---|
+| NotTracked | 0 |	The joint data is not tracked and no data is known about this joint. |
+| Inferred | 1 | The joint data is inferred.Confidence in the position data is very low. |
+| Tracked | 2 |	The joint data is being tracked and the data can be trusted. |
+
+
+HAND STATE
+
+|State|Value|Description|
+|:---|:---:|:---|
+| Closed | 3 | The hand is closed. | 
+| Lasso | 4 | The hand is in the lasso state. | 
+| NotTracked | 1 | Hand state is not tracked. | 
+| Open | 2 | The hand is open. | 
+| Unknown | 0 | The state of the hand is unknown. | 
+
+
+JOINT NUMBERS
+
+|State|Value|Description|
+|:---|:---:|:---|
+| SpineBase | 0 | Base of the spine |
+| SpineMid | 1 | Middle of the spine |
+| Neck | 2 | Neck |
+| Head | 3 | Head |
+| ShoulderLeft | 4 | Left shoulder |
+| ElbowLeft | 5 | Left elbow |
+| WristLeft | 6 | Left wrist |
+| HandLeft | 7 | Left hand |
+| ShoulderRight | 8 | Right shoulder |
+| ElbowRight | 9 | Right elbow |
+| WristRight | 10 | Right wrist |
+| HandRight | 11 | Right hand |
+| HipLeft | 12 | Left hip |
+| KneeLeft | 13 | Left knee |
+| AnkleLeft | 14 | Left ankle |
+| FootLeft | 15 | Left foot |
+| HipRight | 16 | Right hip |
+| KneeRight | 17 | Right knee |
+| AnkleRight | 18 | Right ankle |
+| FootRight | 19 | Right foot |
+| SpineShoulder | 20 | Spine at the shoulder |
+| HandTipLeft | 21 | Tip of the left hand |
+| ThumbLeft | 22 | Left thumb |
+| HandTipRight | 23 | Tip of the right hand |
+| ThumbRight | 24 | Right thumb |
+
