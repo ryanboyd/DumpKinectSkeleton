@@ -88,7 +88,7 @@ See also: https://msdn.microsoft.com/en-us/library/dn785526.aspx
 
 ------------------------------------------------------------------
 
-##Calculating Pitch, Roll, and Yaw from orientation data
+## Calculating Pitch, Roll, and Yaw from orientation data
 
 This same information is presented as a comment in the code near the bottom (with source link). However, just so you don't have to go mucking through the code to find this information, here are the basic formulae for calculating pitch, roll, and yaw from the orientation data in the output.
 
