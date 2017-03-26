@@ -46,7 +46,7 @@ namespace DumpKinectSkeletonLib
                 // write header
                 _bodyOutputStream.WriteLine(
                     //"# timestamp, jointType, position.X, position.Y, position.Z, orientation.X, orientation.Y, orientation.Z, orientation.W, pitch, yaw, roll, joint.tracking.state, lefthand.state, lefthand.conf, righthand.state, righthand.conf");
-                    "# timestamp, jointType, position.X, position.Y, position.Z, orientation.X, orientation.Y, orientation.Z, orientation.W, joint.tracking.state, lefthand.state, lefthand.conf, righthand.state, righthand.conf");
+                    "# timestamp, jointType, position.X, position.Y, position.Z, orientation.X, orientation.Y, orientation.Z, orientation.W, joint.tracking.state, lefthand.state, lefthand.conf, righthand.state, righthand.conf, lean.left_right, lean.front_back");
             }
             catch ( Exception e )
             {
@@ -132,6 +132,7 @@ namespace DumpKinectSkeletonLib
             //string LHState = "", RHState = "";
             int LHC = (int)body.HandLeftConfidence, RHC = (int)body.HandRightConfidence, LHState = (int)body.HandLeftState, RHState = (int)body.HandRightState;
 
+            double lean_x = body.Lean.X, lean_y = body.Lean.Y;
 
             //remnant from when I was outputting strings in addition to numbers
             //switch (body.HandLeftState)
@@ -208,7 +209,7 @@ namespace DumpKinectSkeletonLib
 
                 _bodyOutputStream.WriteLine( string.Format(CultureInfo.InvariantCulture.NumberFormat,
                     //"{0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}",
-                    "{0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}",
+                    "{0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}",
                     timestamp.TotalMilliseconds,
                     joint_number,
                     position.X, position.Y, position.Z,
@@ -221,7 +222,9 @@ namespace DumpKinectSkeletonLib
                     //Math.Atan2(2 * ((orientation.X * orientation.Y) + (orientation.W * orientation.Z)), (orientation.W * orientation.W) + (orientation.X * orientation.X) - (orientation.Y * orientation.Y) - (orientation.Z * orientation.Z)) / Math.PI * 180.0,
                     (int)joints[ jointType ].TrackingState,
                     //output hand states / confidences
-                    Output_LHState, Output_LHC, Output_RHState, Output_RHC))
+                    Output_LHState, Output_LHC, Output_RHState, Output_RHC,
+                    lean_x, lean_y
+                    ))
                     
               
                 ;
