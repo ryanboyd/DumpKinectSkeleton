@@ -24,11 +24,11 @@ HAND STATE
 
 |State|Value|Description|
 |:---|:---:|:---|
-| Closed | 3 | The hand is closed. | 
-| Lasso | 4 | The hand is in the lasso state. | 
+| Unknown | 0 | The state of the hand is unknown. | 
 | NotTracked | 1 | Hand state is not tracked. | 
 | Open | 2 | The hand is open. | 
-| Unknown | 0 | The state of the hand is unknown. | 
+| Closed | 3 | The hand is closed. | 
+| Lasso | 4 | The hand is in the lasso state. | 
 
 
 JOINT NUMBERS
