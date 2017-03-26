@@ -85,3 +85,17 @@ I have added a small bit of code that calculates some additional joint info at t
   * +1 corresponds to a ~45° lean to the front
 
 See also: https://msdn.microsoft.com/en-us/library/dn785526.aspx
+
+------------------------------------------------------------------
+
+##Calculating Pitch, Roll, and Yaw from orientation data
+
+This same information is presented as a comment in the code near the bottom (with source link). However, just so you don't have to go mucking through the code to find this information, here are the basic formulae for calculating pitch, roll, and yaw from the orientation data in the output.
+
+```
+Pitch = Math.Atan2(2 * ((orientation.Y * orientation.Z) + (orientation.W * orientation.X)), (orientation.W * orientation.W) - (orientation.X * orientation.X) - (orientation.Y * orientation.Y) + (orientation.Z * orientation.Z)) / Math.PI * 180.0
+
+Yaw = Math.Asin(2 * ((orientation.W * orientation.Y) - (orientation.X * orientation.Z))) / Math.PI * 180.0
+      
+Roll = Math.Atan2(2 * ((orientation.X * orientation.Y) + (orientation.W * orientation.Z)), (orientation.W * orientation.W) + (orientation.X * orientation.X) - (orientation.Y * orientation.Y) - (orientation.Z * orientation.Z)) / Math.PI * 180.0
+```
