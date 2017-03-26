@@ -23,7 +23,7 @@ I have added a small bit of code that calculates some additional joint info at t
 
 ### JOINT NUMBERS
 
-|State|Value|Description|
+|Joint Name|Value|Description|
 |:---|:---:|:---|
 | SpineBase | 0 | Base of the spine |
 | SpineMid | 1 | Middle of the spine |
