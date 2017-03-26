@@ -9,6 +9,8 @@ https://github.com/sebtoun/DumpKinectSkeleton
 
 I have added a small bit of code that calculates some additional joint info at the time of output, along with hand states.
 
+------------------------------------------------------------------
+
 ## Joint output interpretation
 
 ### JOINT STATE
@@ -68,6 +70,7 @@ I have added a small bit of code that calculates some additional joint info at t
 | NotTracked | 0 |	Not tracked. |
 | Inferred | 1 | Tracked. |
 
+------------------------------------------------------------------
 
 ## Lean output interpretation
 
