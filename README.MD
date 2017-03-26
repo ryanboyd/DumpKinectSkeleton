@@ -11,7 +11,7 @@ I have added a small bit of code that calculates some additional joint info at t
 
 ## Joint output interpretation
 
-JOINT STATE
+### JOINT STATE
 
 |State|Value|Description|
 |:---|:---:|:---|
@@ -19,19 +19,7 @@ JOINT STATE
 | Inferred | 1 | The joint data is inferred.Confidence in the position data is very low. |
 | Tracked | 2 |	The joint data is being tracked and the data can be trusted. |
 
-
-HAND STATE
-
-|State|Value|Description|
-|:---|:---:|:---|
-| Unknown | 0 | The state of the hand is unknown. | 
-| NotTracked | 1 | Hand state is not tracked. | 
-| Open | 2 | The hand is open. | 
-| Closed | 3 | The hand is closed. | 
-| Lasso | 4 | The hand is in the lasso state. | 
-
-
-JOINT NUMBERS
+### JOINT NUMBERS
 
 |State|Value|Description|
 |:---|:---:|:---|
@@ -61,3 +49,21 @@ JOINT NUMBERS
 | HandTipRight | 23 | Tip of the right hand |
 | ThumbRight | 24 | Right thumb |
 
+### HAND STATE
+
+|State|Value|Description|
+|:---|:---:|:---|
+| Irrelevant | -1 | The joint referred to on this line is not a hand. | 
+| Unknown | 0 | The state of the hand is unknown. | 
+| NotTracked | 1 | Hand state is not tracked. | 
+| Open | 2 | The hand is open. | 
+| Closed | 3 | The hand is closed. | 
+| Lasso | 4 | The hand is in the lasso state. | 
+
+
+### HAND STATE CONFIDENCE
+
+|State|Value|Description|
+|:---|:---:|:---|
+| NotTracked | 0 |	Not tracked. |
+| Inferred | 1 | Tracked. |
