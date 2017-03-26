@@ -73,10 +73,11 @@ I have added a small bit of code that calculates some additional joint info at t
 
 "Lean" is tracked by the Kinect along 2 axes.
 
-* lean.left_right ranges between -1 and +1
+* **lean.left_right** ranges between -1 and +1
   * -1 corresponds to a ~45° lean to the left
   * +1 corresponds to a ~45° lean to the right
-* lean.front_back ranges between -1 and +1
+  
+* **lean.front_back** ranges between -1 and +1
   * -1 corresponds to a ~45° lean to the back
   * +1 corresponds to a ~45° lean to the front
 
