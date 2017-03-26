@@ -53,7 +53,7 @@ I have added a small bit of code that calculates some additional joint info at t
 
 |State|Value|Description|
 |:---|:---:|:---|
-| Irrelevant | -1 | The joint referred to on this line is not a hand. | 
+| Not applicable | -1 | The joint referred to on this line is not a hand. | 
 | Unknown | 0 | The state of the hand is unknown. | 
 | NotTracked | 1 | Hand state is not tracked. | 
 | Open | 2 | The hand is open. | 
