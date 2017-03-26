@@ -67,3 +67,17 @@ I have added a small bit of code that calculates some additional joint info at t
 |:---|:---:|:---|
 | NotTracked | 0 |	Not tracked. |
 | Inferred | 1 | Tracked. |
+
+
+## Lean output interpretation
+
+"Lean" is tracked by the Kinect along 2 axes.
+
+* lean.left_right ranges between -1 and +1
+ * -1 corresponds to a ~45° lean to the left
+ * +1 corresponds to a ~45° lean to the right
+* lean.front_back ranges between -1 and +1
+ * -1 corresponds to a ~45° lean to the back
+ * +1 corresponds to a ~45° lean to the front
+
+See also: https://msdn.microsoft.com/en-us/library/dn785526.aspx
