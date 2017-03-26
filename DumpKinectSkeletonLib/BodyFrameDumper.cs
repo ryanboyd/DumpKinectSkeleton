@@ -45,7 +45,8 @@ namespace DumpKinectSkeletonLib
 
                 // write header
                 _bodyOutputStream.WriteLine(
-                    "# timestamp, jointType, position.X, position.Y, position.Z, orientation.X, orientation.Y, orientation.Z, orientation.W, pitch, yaw, roll, joint.tracking.state, lefthand.state, lefthand.conf, righthand.state, righthand.conf");
+                    //"# timestamp, jointType, position.X, position.Y, position.Z, orientation.X, orientation.Y, orientation.Z, orientation.W, pitch, yaw, roll, joint.tracking.state, lefthand.state, lefthand.conf, righthand.state, righthand.conf");
+                    "# timestamp, jointType, position.X, position.Y, position.Z, orientation.X, orientation.Y, orientation.Z, orientation.W, joint.tracking.state, lefthand.state, lefthand.conf, righthand.state, righthand.conf");
             }
             catch ( Exception e )
             {
@@ -205,17 +206,19 @@ namespace DumpKinectSkeletonLib
 
 
 
-                _bodyOutputStream.WriteLine( string.Format(CultureInfo.InvariantCulture.NumberFormat, "{0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}",
+                _bodyOutputStream.WriteLine( string.Format(CultureInfo.InvariantCulture.NumberFormat,
+                    //"{0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}",
+                    "{0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}",
                     timestamp.TotalMilliseconds,
                     joint_number,
                     position.X, position.Y, position.Z,
                     orientation.X, orientation.Y, orientation.Z, orientation.W,
                     //calculate pitch
-                    Math.Atan2(2 * ((orientation.Y * orientation.Z) + (orientation.W * orientation.X)), (orientation.W * orientation.W) - (orientation.X * orientation.X) - (orientation.Y * orientation.Y) + (orientation.Z * orientation.Z)) / Math.PI * 180.0,
+                    //Math.Atan2(2 * ((orientation.Y * orientation.Z) + (orientation.W * orientation.X)), (orientation.W * orientation.W) - (orientation.X * orientation.X) - (orientation.Y * orientation.Y) + (orientation.Z * orientation.Z)) / Math.PI * 180.0,
                     //calculate yaw
-                    Math.Asin(2 * ((orientation.W * orientation.Y) - (orientation.X * orientation.Z))) / Math.PI * 180.0,
+                    //Math.Asin(2 * ((orientation.W * orientation.Y) - (orientation.X * orientation.Z))) / Math.PI * 180.0,
                     //calculate roll
-                    Math.Atan2(2 * ((orientation.X * orientation.Y) + (orientation.W * orientation.Z)), (orientation.W * orientation.W) + (orientation.X * orientation.X) - (orientation.Y * orientation.Y) - (orientation.Z * orientation.Z)) / Math.PI * 180.0,
+                    //Math.Atan2(2 * ((orientation.X * orientation.Y) + (orientation.W * orientation.Z)), (orientation.W * orientation.W) + (orientation.X * orientation.X) - (orientation.Y * orientation.Y) - (orientation.Z * orientation.Z)) / Math.PI * 180.0,
                     (int)joints[ jointType ].TrackingState,
                     //output hand states / confidences
                     Output_LHState, Output_LHC, Output_RHState, Output_RHC))
